@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating Hearts */
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  animation: floatHearts 3s linear infinite;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(var(--randomX));
+    opacity: 0;
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5em;
+  color: #ff4d6d;
+  margin-bottom: 20px;
+}
+
+.hidden-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.message {
+  font-size: 1.2em;
+  color: #555;
+  transform: scale(0.9);
+  transition: transform 0.5s ease-in-out;
+}
+
+.photo-gallery {
+  margin-top: 20px;
+}
+
+.photo-gallery h2 {
+  font-size: 1.5em;
+  color: #ff4d6d;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.photos img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.love-button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1em;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.love-button:hover {
+  background: #d63447;
+  transform: scale(1.1);
+}
+
+.hidden-message {
+  font-size: 1.3em;
+  color: #d63447;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
